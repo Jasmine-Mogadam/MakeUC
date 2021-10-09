@@ -5,7 +5,7 @@ window.onload = function () {
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   var categories;         // Array of topics
-  var chosenCategory;     // Selected catagory
+  var chosenCategory;     // Selected category
   var getHint ;          // Word getHint
   var word ;              // Selected word
   var guess ;             // Guess
@@ -13,6 +13,7 @@ window.onload = function () {
   var lives ;             // Lives
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
+  var boost = 0;           //extra lives from web purchases
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -38,11 +39,11 @@ window.onload = function () {
   // Select Category
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      categoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+      showCategory.innerHTML = "The Category Is Premier League Football Teams";
     } else if (chosenCategory === categories[1]) {
-      categoryName.innerHTML = "The Chosen Category Is Films";
+      showCategory.innerHTML = "The Category Is Films";
     } else if (chosenCategory === categories[2]) {
-      categoryName.innerHTML = "The Chosen Category Is Cities";
+      showCategory.innerHTML = "The Category Is Cities";
     }
   }
 
@@ -56,8 +57,8 @@ window.onload = function () {
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
-        guess.innerHTML = "     ";
-        space = 1;
+        guess.innerHTML = " ";
+        space = 2;
       } else {
         guess.innerHTML = "_";
       }
@@ -81,7 +82,7 @@ window.onload = function () {
     }
   }
 
-      // Animate man
+      // Animate rocket
   var animate = function () {
     var drawMe = lives ;
     drawArray[drawMe]();
@@ -195,12 +196,12 @@ window.onload = function () {
     buttons();
 
     guesses = [ ];
-    lives = 10;
+    lives = 12+boost;
     counter = 0;
     space = 0;
     result();
     comments();
-    //selectCat();
+    selectCat();
     canvas();
   }
 
@@ -211,7 +212,7 @@ window.onload = function () {
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    context.clearRect(0, 0, 400, 400);
+    context.clearRect(0, 0, 1400, 700);
     play();
   }
 }

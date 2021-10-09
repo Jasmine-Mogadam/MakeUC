@@ -6,26 +6,39 @@
   <script src="hangman.js"></script>
 </head>
 <body>
+  <div id="tutorial">
 <h1>Build a Spaceship to go to Space!</h1>
 <div class="wrapper">
-    <p>Choose the right letters to fuel your rocket. Don't get too many wrong, or it may not fly!</p>
+    <p>Hello [user]! Choose the right letters to fuel your rocket. Don't get too many wrong, or it may not fly!</p>
+</div>
 </div>
 <div class="wrapper">
   <p id="mylives"></p>
   <div class="row">
     <div class="col-9">
       <br>
-      <canvas id="rocket">Sorry! Your Browser does not support the HTML5 Canvas tag. Thank you for visiting though!</canvas>
+      <canvas id="rocket" width="500px" height="400px">Sorry! Your Browser does not support the HTML5 Canvas tag. Thank you for visiting though!</canvas>
       <div id="hold"></div>
     </div>
     <div class="col-lg">
-      <!--p>Letter Bank</p-->
-      <div id="buttons"></div>
+      <div id="category"></div>
+      <a href=#mylives><div id="buttons"></div></a>
     </div>
   </row>
      <div class="container">
       <button id="reset">Play again</button>
+      <br>
+      <p>Buy a boost for your rocket!</p>
+      <div class="row">
+        <div class="col">
+          <p>Add a window!</p>
+        </div>
+        <div class="col">
+          <p>Add a monkey!</p>
+        </div>
+      </div>
     </div>
+
 </div>
 </body>
 </html>
