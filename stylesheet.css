@@ -98,10 +98,28 @@ button{
   outline: none;
 }
 
-  }
+canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
+}
 
-  @media (max-width: 740px) {
+@media (max-width: 1000px) {
   #alphabet li{
   margin: 1px;
-}
   }
+}
+
+@media (max-width: 1000px) {
+  #my-word li{
+  font-size: 2em;
+  }
+}
+
+@media (max-width: 1000px) {
+  canvas{
+  height:400px;
+  width:300px;
+  }
+}
