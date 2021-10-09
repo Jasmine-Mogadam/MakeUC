@@ -1,0 +1,7 @@
+Scoring:
+	2 scoring values
+		-damage points
+		+booster points
+		1 Damage Point = 50 Points
+		1 Booster Point = 100 Points
+	Score = (Booster Points*100) - (Damage Points*50)
