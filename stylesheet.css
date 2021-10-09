@@ -40,7 +40,7 @@ p{
 #alphabet {
   margin:15px auto;
   padding:0;
-  max-width:900px;
+  max-width:100%;
 }
 
 #alphabet li {
@@ -76,7 +76,7 @@ p{
   margin: 0;
   display: inline-block;
   padding: 0 10px;
-  font-size:4em;
+  font-size:2em;
 }
 
 #mylives{
@@ -102,24 +102,38 @@ canvas {
     padding: 0;
     margin: auto;
     display: block;
-    width: 800px;
+    width:600px;
+    height:600px;
+}
+
+#healthbar {
+  width: 100%;
+  height: 40px;
+  margin-right: 200px;
+  margin-bottom: 10px;
+  background-color: red;
+}
+
+#indicator{
+  width: 100%;
+  height: 40px;
+  padding: 0px;
+  background-color: green;
+  overflow: hidden;
+  float: left;
 }
 
 @media (max-width: 1000px) {
-  #alphabet li{
-  margin: 1px;
-  }
-}
-
-@media (max-width: 1000px) {
-  #my-word li{
+  #my-word{
   font-size: 2em;
   }
-}
-
-@media (max-width: 1000px) {
   canvas{
-  height:400px;
-  width:300px;
+  margin-left: 190px;
+  }
+  #alphabet li{
+  margin: 1px;
+  font-size: 3em;
+  width: 100px;
+  height: 100px;
   }
 }

@@ -166,6 +166,8 @@ window.onload = function () {
           counter += 1;
         }
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
+        indicator = document.getElementById("indicator");
+        indicator.innerHTML = "<span style='background-color:red'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
