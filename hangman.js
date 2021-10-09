@@ -39,7 +39,7 @@ window.onload = function () {
   // Select Category
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      showCategory.innerHTML = "The Category Is Premier League Football Teams";
+      showCategory.innerHTML = "The Category Is Film Titles";
     } else if (chosenCategory === categories[1]) {
       showCategory.innerHTML = "The Category Is Films";
     } else if (chosenCategory === categories[2]) {
@@ -164,7 +164,6 @@ window.onload = function () {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
-          alphabet.splice(i, 1);
         }
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
       }
@@ -184,7 +183,7 @@ window.onload = function () {
   // Play
   play = function () {
     categories = [
-        ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
+        ["the-princess-bride", "footloose", "top-gun", "the-karate-kid", "the-terminator", "scarface", "beetlejuice", "dirty-dancing", "back-to-the-future", "die-hard", "the-shining", "ghostbusters", "the-breakfast-club", "sixteeen-candles", "pretty-in-pink", "labyrinth", "annie", "beverly-hills-cop"],
         ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
         ["manchester", "milan", "madrid", "amsterdam", "prague"]
     ];
