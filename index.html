@@ -8,19 +8,24 @@
 <body>
 <h1>Build a Spaceship to go to Space!</h1>
 <div class="wrapper">
-    <p>Use the alphabet below to guess the word.</p>
+    <p>Choose the right letters to fuel your rocket. Don't get too many wrong, or it may not fly!</p>
 </div>
 <div class="wrapper">
   <p id="mylives"></p>
-  <canvas id="stickman">Sorry! Your Browser does not support the HTML5 Canvas tag. Thank you for visiting though!</canvas>
+  <div class="row">
+    <div class="col-9">
+      <br>
+      <canvas id="rocket">Sorry! Your Browser does not support the HTML5 Canvas tag. Thank you for visiting though!</canvas>
       <div id="hold"></div>
+    </div>
+    <div class="col-lg">
+      <!--p>Letter Bank</p-->
       <div id="buttons"></div>
-      <br><br><br><br><br><br><br><br><br><br><br><br>
-
+    </div>
+  </row>
      <div class="container">
       <button id="reset">Play again</button>
     </div>
 </div>
-<p>Type in the right letter to get parts! Don't get anything wrong though, or you might damage them!</p>
 </body>
 </html>
