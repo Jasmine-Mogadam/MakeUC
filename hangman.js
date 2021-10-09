@@ -60,7 +60,7 @@ window.onload = function () {
       guess = document.createElement('li');
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
-        guess.innerHTML = "-";
+        guess.innerHTML = "     ";
         space = 1;
       } else {
         guess.innerHTML = "_";
@@ -159,6 +159,7 @@ window.onload = function () {
   // OnClick Function
    check = function () {
     list.onclick = function () {
+
       var guess = (this.innerHTML);
       this.setAttribute("class", "active");
       this.onclick = null;
@@ -167,6 +168,7 @@ window.onload = function () {
           geusses[i].innerHTML = guess;
           counter += 1;
         }
+        this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
