@@ -1,0 +1,30 @@
+	
+	Levels of failure (no extensions):
+		0 wrong letters - "Your ship flew to Pluto and back setting a new record for achieving  lightspeed travel!"
+		1-3 wrong letters - "Your ship flew around Mars and back to Earth safely without any severe damage!"
+		4-5 wrong letters - "Your ship made it to Mars and hobbled its way back to Earth safely!" 
+		6-7 wrong letters - "Your ship made it to the Moon and hobbled its way back to Earth safely!"
+		8-9 wrong letters - "Your ship made it to the Moon, but crash landed and is unable to return to Earth!"
+		10-11 wrong letters - "Your ship was too damaged to reach space. You almost crashed into an airplane before you fell out of the sky!"
+		12 wrong letters -  "Due to damage your ship exploded!"
+		
+	Levels of failure (window extension pack):
+		0 wrong letters - "Your ship flew to Pluto and back setting a new record for achieving  lightspeed travel!"
+		1-3 wrong letters - "Your ship flew around Mars and back to Earth safely without any severe damage!"
+		4-5 wrong letters - "Your ship made it to Mars and hobbled its way back to Earth safely!" 
+		6-7 wrong letters - "Your ship made it to Mars, but has crash landed. The crew is now forced to learn how to co-exist with the aliens!"
+		8-9 wrong letters - "Your ship made it to the Moon and hobbled its way back to Earth safely!"
+		10-11 wrong letters - "Your ship made it to the Moon, but crash landed and is unable to return to Earth!"
+		12-13 wrong letters -  "Your ship was too damaged to reach space. You almost crashed into an airplane before you fell out of the sky!"
+		14 wrong letters - "Due to damage your ship exploded!"
+		
+	Levels of failure (monkey extension pack):
+		0 wrong letters - "Your ship flew to Pluto and back setting a new record for achieving  lightspeed travel!"
+		1-3 wrong letters - "Your ship flew around Mars and back to Earth safely without any severe damage!"
+		4-5 wrong letters - "Your ship made it to Mars and hobbled its way back to Earth safely!" 
+		6-7 wrong letters - "Your ship made it to Mars, but has crash landed. The crew is now forced to learn how to co-exist with the aliens!"
+		8-9 wrong letters - "Your ship made it to the Moon and hobbled its way back to Earth safely!"
+		10-11 wrong letters - "Your ship made it to the Moon but was unable to make it back to Earth. It is now in orbit of Earth with no way to get down!"
+		12-13 wrong letters -  "Your ship made it to the Moon, but crash landed and is unable to return to Earth!"
+		14-15 wrong letters - "Your ship was too damaged to reach space. You almost crashed into an airplane before you fell out of the sky!"
+		16 wrong letters - "Due to damage your ship exploded!"
