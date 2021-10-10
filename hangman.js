@@ -39,11 +39,15 @@ window.onload = function () {
   // Select Category
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      showCategory.innerHTML = "The Category Is Film Titles";
+      showCategory.innerHTML = "The Category Is 80's Movies";
     } else if (chosenCategory === categories[1]) {
-      showCategory.innerHTML = "The Category Is Films";
+      showCategory.innerHTML = "The Category Is 70's Bands";
     } else if (chosenCategory === categories[2]) {
-      showCategory.innerHTML = "The Category Is Cities";
+      showCategory.innerHTML = "The Category Is Retro Video Games";
+    } else if (chosenCategory === categories[3]) {
+      showCategory.innerHTML = "The Category Is 70's TV Shows"
+    } else if (chosenCategory === categories[4]) {
+      showCategory.innerHTML = "The Category Is U.S. Presidents"
     }
   }
 
@@ -195,8 +199,10 @@ window.onload = function () {
   play = function () {
     categories = [
         ["the-princess-bride", "footloose", "top-gun", "the-karate-kid", "the-terminator", "scarface", "beetlejuice", "dirty-dancing", "back-to-the-future", "die-hard", "the-shining", "ghostbusters", "the-breakfast-club", "sixteeen-candles", "pretty-in-pink", "labyrinth", "annie", "beverly-hills-cop"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["stevie-wonder", "Led Zeppelin", "Elton John", "Pink Floyd", "The Rolling Stones", "queen", "david-bowie", "black-sabbath", "fleetwood-mac", "marvin-gaye", "james-brown", "aretha-franklin", "bruce-springsteen", "lynyrd-skynyrd"],
+        ["minesweeper", "pac-man", "space-invaders", "telstar", "odyssey", "stratego", "spaceware", "combat", "asteroids", "super-breakout", "circus-atari", "galaga", "donkey-kong", "frogger"],
+        ["the-brady-bunch", "happy-days", "the-amazing-spiderman", "the-mary-tyler-moore-show", "the-new-dick-van-dyke-show", "good-times", "little-house-on-the-prairie"],
+        ["ronald-reagan", "jimmy-carter", "gerald-ford", "richard-nixon", "lyndon-b-johnson", "dwight-d-eisenhower", "harry-s-truman", "franklin-d-roosevelt", "herbert-hoover", "calvin-coolidge", "theodore-roosevelt", "william-howard-taft", "woodrow-wilson", "george-bush", "bill-clinton"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
