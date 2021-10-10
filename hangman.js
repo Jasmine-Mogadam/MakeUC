@@ -62,7 +62,7 @@ window.onload = function () {
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
         guess.innerHTML = " ";
-        space = 2;
+        space += 1;
       } else {
         guess.innerHTML = "_";
       }
@@ -167,6 +167,7 @@ window.onload = function () {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
+          console.log("loop")
           }
           if(lives>0){
             healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
@@ -174,11 +175,13 @@ window.onload = function () {
           else{
             healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
         }
+        console.log("after loop")
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         lives -= 1;
+        console.log("life down")
         comments();
         animate();
         if(lives>0){
@@ -199,7 +202,7 @@ window.onload = function () {
   play = function () {
     categories = [
         ["the-princess-bride", "footloose", "top-gun", "the-karate-kid", "the-terminator", "scarface", "beetlejuice", "dirty-dancing", "back-to-the-future", "die-hard", "the-shining", "ghostbusters", "the-breakfast-club", "sixteeen-candles", "pretty-in-pink", "labyrinth", "annie", "beverly-hills-cop"],
-        ["stevie-wonder", "Led Zeppelin", "Elton John", "Pink Floyd", "The Rolling Stones", "queen", "david-bowie", "black-sabbath", "fleetwood-mac", "marvin-gaye", "james-brown", "aretha-franklin", "bruce-springsteen", "lynyrd-skynyrd"],
+        ["stevie-wonder", "led-zeppelin", "elton-john", "pink-floyd", "the-rolling-stones", "queen", "david-bowie", "black-sabbath", "fleetwood-mac", "marvin-gaye", "james-brown", "aretha-franklin", "bruce-springsteen", "lynyrd-skynyrd"],
         ["minesweeper", "pac-man", "space-invaders", "telstar", "odyssey", "stratego", "spaceware", "combat", "asteroids", "super-breakout", "circus-atari", "galaga", "donkey-kong", "frogger"],
         ["the-brady-bunch", "happy-days", "the-amazing-spiderman", "the-mary-tyler-moore-show", "the-new-dick-van-dyke-show", "good-times", "little-house-on-the-prairie"],
         ["ronald-reagan", "jimmy-carter", "gerald-ford", "richard-nixon", "lyndon-b-johnson", "dwight-d-eisenhower", "harry-s-truman", "franklin-d-roosevelt", "herbert-hoover", "calvin-coolidge", "theodore-roosevelt", "william-howard-taft", "woodrow-wilson", "george-bush", "bill-clinton"]
