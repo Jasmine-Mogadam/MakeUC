@@ -2,24 +2,23 @@ html {
   scroll-behavior: smooth;
 }
 
-/*
 @font-face{
 	font-family: 'Upheaval';
-	src: url('Upeaval.woff') format('woff'),
-		url('Upheaval.ttf') format('truetype'),
-		url('Upheaval.svg#Upheaval') format('svg');
+	src: url('font/upheaval/Upheaval.woff') format('woff'),
+		url('font/upheaval/upheavtt.ttf') format('truetype'),
+		/*url('font/upheaval/Upheaval.svg#Upheaval') format('svg');*/
   	font-weight: normal;
   	font-style: normal;
 }
 
 @font-face{
 	font-family:'Arcade';
-	src: url('8-bit Arcade In.ttf') format('truetype'),
-		url('8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
-		url('8_bit_Arcade_In.woff') format('woff');
+	src: url('font/8_bit_arcade/8-bit Arcade In.ttf') format('truetype'),
+		/*url('font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')*/
+		url('font/8_bit_arcade/8-bit_Arcade_In.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-}*/
+}
 
 
 body {
