@@ -14,6 +14,7 @@ window.onload = function () {
   var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
   var boost = 0;           //extra lives from web purchases
+  var level = 1;          //level in game
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -82,11 +83,32 @@ window.onload = function () {
     }
   }
 
-      // Animate rocket
-  var animate = function () {
-    var drawMe = lives ;
-    drawArray[drawMe]();
+      //display the rocket
+  
+  var imgArray = new Array();
+  var x=0;
+  var livesLost=0;
+  
+  if (level==1)
+  {
+    for (let step =1; step<=14; step++) {
+      imgArray[step-1]=new Image();
+      imgArray[step-1].src='img_'+14-step+'.png'
+    }
   }
+  else
+  {
+    for (let step=1; step<=10; step++){
+      imgArray[step-1]=new Image();
+      imgArray[step-1].src='m_img_'+10-step+'.png';
+    }
+  }
+  
+   display = function(){
+     context.clearRect(0,0,200,200);
+     imgArray[lives];
+    }
+      
 
 
    // Hangman
@@ -114,43 +136,7 @@ window.onload = function () {
     context.stroke();
 }
 
-   frame1 = function() {
-     draw (0, 150, 150, 150);
-   };
 
-   frame2 = function() {
-     draw (10, 0, 10, 600);
-   };
-
-   frame3 = function() {
-     draw (0, 5, 70, 5);
-   };
-
-   frame4 = function() {
-     draw (60, 5, 60, 15);
-   };
-
-   torso = function() {
-     draw (60, 36, 60, 70);
-   };
-
-   rightArm = function() {
-     draw (60, 46, 100, 50);
-   };
-
-   leftArm = function() {
-     draw (60, 46, 20, 50);
-   };
-
-   rightLeg = function() {
-     draw (60, 70, 100, 100);
-   };
-
-   leftLeg = function() {
-     draw (60, 70, 20, 100);
-   };
-
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
 
 
   // OnClick Function
@@ -173,7 +159,7 @@ window.onload = function () {
       if (j === -1) {
         lives -= 1;
         comments();
-        animate();
+        display();
       } else {
         comments();
       }
