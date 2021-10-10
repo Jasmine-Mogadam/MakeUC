@@ -177,7 +177,7 @@ window.onload = function () {
      context.drawImage(image, 0, 0);
    };
 
-  drawArray = [pristene, smudged, dented, scratched,  chipped,  damaged, tarnished, ruined, explode, norm9, norm10, norm11, normExplode];
+  drawArray = [normExplode, norm11, norm10, norm9, explode, ruined, tarnished, damaged, chipped, scratched, dented, smudged, pristene];
 
   // OnClick Function
    check = function () {
@@ -244,6 +244,7 @@ window.onload = function () {
     comments();
     selectCat();
     canvas();
+    pristene();
   }
 
   play();
