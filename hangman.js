@@ -14,11 +14,21 @@ window.onload = function () {
   var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
   var level = 0;           //extra lives from web purchases
-  var health = 100;   
+  var health = 100;
 
   // Get elements
   var showLives = document.getElementById("mylives");
   var showCategory = document.getElementById("category");
+  var normalRocket = document.getElementById("normalRocket");
+  var monkeyRocket = document.getElementById("monkeyRocket");
+  //find level
+  normalRocket.onclick = function () {
+    level = 0;
+  }
+
+  monkeyRocket.onclick = function () {
+    level = 4;
+  }
 
   // create alphabet ul
   var buttons = function () {
@@ -97,7 +107,7 @@ window.onload = function () {
           showLives.innerHTML = "You Win! Your ship made it to the Moon, but crash landed and is unable to return to Earth!";
       }  else if ((counter + space === guesses.length) && (health >= 15)) {
           showLives.innerHTML = "You Win! Your ship was too damaged to reach space. You almost crashed into an airplane before you fell out of the sky!";
-      }  
+      }
     }
   }
 
@@ -118,7 +128,7 @@ window.onload = function () {
       imgStr = "img/img_";
       console.log("no monk");
     }
-    if(level === 2){
+    if(level === 4){
       imgStr = "img/img_m_";
     }
   };
