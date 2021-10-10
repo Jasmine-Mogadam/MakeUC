@@ -88,12 +88,12 @@ window.onload = function () {
 
       // Animate rocket
   var animate = function () {
-    var drawMe = lives ;
+    var drawMe = lives-12 ;
     drawArray[drawMe]();
   }
 
    // Rocket Hangman
-  canvas =  function(){
+  var canvas =  function(){
 
     canvas = document.getElementById("rocket");
     context = canvas.getContext('2d');
@@ -104,13 +104,13 @@ window.onload = function () {
       console.log("no monk");
     }
     if(level === 2){
-      imgStr = "img/img_m_";
+      imgStr = "img/m_img_";
     }
   };
 
    pristene = function() {
      image.src = imgStr + "0.png";
-     context.drawImage(image, 0, 0);
+     context.drawImage(image, 0, 0,image.width,image.height,0,0,canvas.width,canvas.height);
      console.log("1");
    };
 
