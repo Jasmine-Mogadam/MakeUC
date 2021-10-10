@@ -24,12 +24,17 @@ window.onload = function () {
   //find level
   normalRocket.onclick = function () {
     level = 0;
-    console.log("norm");
+    lives = 12-level;
+    imgStr = "img/img_";
+    pristene();
   }
-
   monkeyRocket.onclick = function () {
     level = 4;
-    console.log("norm");
+    lives = 12-level;
+    health = lives;
+    console.log("lives");
+    imgStr = "img/m_img_";
+    pristene();
   }
 
   // create alphabet ul
@@ -115,16 +120,13 @@ window.onload = function () {
 
       // Animate rocket
   var animate = function () {
-    var drawMe = lives ;
-    console.log(lives);
-    drawArray[drawMe]();
+    drawArray[lives+level]();
   }
 
    // Rocket Hangman
   canvas =  function(){
 
     image = document.getElementById("rocket");
-    console.log("change request");
     if(level === 0){
       imgStr = "img/img_";
     }
