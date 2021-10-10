@@ -4,18 +4,30 @@ html {
 
 @font-face{
 	font-family: 'Upheaval';
+<<<<<<< HEAD
 	src: url('MakeUC/font/upheaval/Upeaval.woff') format('woff'),
 		url('MakeUC/font/upheaval/Upheaval.ttf') format('truetype'),
 		url('MakeUC/font/upheaval/Upheaval.svg#Upheaval') format('svg');
+=======
+	src: url('Upeaval.woff') format('woff'),
+		url('Upheaval.ttf') format('truetype'),
+		url('Upheaval.svg#Upheaval') format('svg');
+>>>>>>> parent of e54d14f (Update stylesheet.css)
   	font-weight: normal;
   	font-style: normal;
 }
 
 @font-face{
 	font-family:'Arcade';
+<<<<<<< HEAD
 	src: url('MakeUC/font/8_bit_arcade/8-bit Arcade In.ttf') format('truetype'),
 		url('MakeUC/font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
 		url('MakeUC/font/8_bit_arcade/8_bit_Arcade_In.woff') format('woff');
+=======
+	src: url('8-bit Arcade In.ttf') format('truetype'),
+		url('8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
+		url('8_bit_Arcade_In.woff') format('woff');
+>>>>>>> parent of e54d14f (Update stylesheet.css)
 	font-weight: normal;
 	font-style: normal;
 }
