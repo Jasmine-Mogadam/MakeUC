@@ -92,6 +92,50 @@ window.onload = function () {
     drawArray[drawMe]();
   }
 
+/*
+  var imgArray = new Array();
+var x=0;
+var livesLost=0;
+
+if (level==1)
+{
+  for (let step =1; step<=14; step++) {
+    imgArray[step-1]=new Image();
+    imgArray[step-1].src='img_'+14-step+'.png'
+  }
+}
+else
+{
+  for (let step=1; step<=10; step++){
+    imgArray[step-1]=new Image();
+    imgArray[step-1].src='m_img_'+10-step+'.png';
+  }
+}
+
+ display = function(){
+   context.clearRect(0,0,200,200);
+   imgArray[lives];
+  }
+
+
+
+ // Hangman
+canvas =  function(){
+
+  rocketShip = document.getElementById("rocket");
+  context = rocketShip.getContext('2d');
+  context.beginPath();
+  context.strokeStyle = "#fff";
+  context.lineWidth = 2;
+};
+
+draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
+
+  context.moveTo($pathFromx, $pathFromy);
+  context.lineTo($pathTox, $pathToy);
+  context.stroke();
+}
+*/
 
    // Hangman
   canvas =  function(){
