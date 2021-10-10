@@ -2,56 +2,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/*
 @font-face{
 	font-family: 'Upheaval';
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-	src: url('MakeUC/font/upheaval/Upeaval.woff') format('woff'),
-		url('MakeUC/font/upheaval/Upheaval.ttf') format('truetype'),
-		url('MakeUC/font/upheaval/Upheaval.svg#Upheaval') format('svg');
-=======
-	src: url('Upeaval.woff') format('woff'),
-		url('Upheaval.ttf') format('truetype'),
-		url('Upheaval.svg#Upheaval') format('svg');
->>>>>>> parent of e54d14f (Update stylesheet.css)
-=======
 	src: url('font/upheaval/upheavtt.woff') format('woff'),
 		url('font/upheaval/upheavtt.ttf') format('truetype');
->>>>>>> Stashed changes
   	font-weight: normal;
   	font-style: normal;
 }
 
 @font-face{
 	font-family:'Arcade';
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-	src: url('MakeUC/font/8_bit_arcade/8-bit Arcade In.ttf') format('truetype'),
-		url('MakeUC/font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
-		url('MakeUC/font/8_bit_arcade/8_bit_Arcade_In.woff') format('woff');
-=======
-	src: url('8-bit Arcade In.ttf') format('truetype'),
-		url('8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
-		url('8_bit_Arcade_In.woff') format('woff');
->>>>>>> parent of e54d14f (Update stylesheet.css)
-=======
-	src: url('font/8_bit_arcade/8-bit Arcade On.ttf') format('truetype'),
+	src: url('font/8_bit_arcade/8-bit Arcade In.ttf') format('truetype'),
 		url('font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg'),
-		url('font/8_bit_arcade/8-bit_Arcade_In.woff') format('woff');
->>>>>>> Stashed changes
+		url('font/8_bit_arcade/8_bit_Arcade_In.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
-}*/
+}
 
 
 body {
-<<<<<<< Updated upstream
-  background: #000000;
-=======
   background: #2F4F4F;
   font-family: 'Arcade', Fallback, sans-serif;
->>>>>>> Stashed changes
   color:white;
   height:100%;
   text-align:center;
@@ -183,15 +154,18 @@ button{
 }
 
 @media (max-width: 1000px) {
-  #my-word{
+  body{
     font-size: 2em;
+  }
+  #my-word{
+    font-size: 30px;
   }
   canvas{
     margin-left: 30%;
   }
   #alphabet li{
     margin: 1px;
-    font-size: 3em;
+    font-size: 2em;
     width: 100px;
     height: 100px;
   }
