@@ -11,9 +11,9 @@ window.onload = function () {
   var guess ;             // Guess
   var guesses = [ ];      // Stored guesses
   var lives ;             // Lives
-  var counter ;           // Count correct geusses
+  var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
-  var boost = 0;           //extra lives from web purchases
+  var level = 0;           //extra lives from web purchases
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -152,7 +152,6 @@ window.onload = function () {
 
   drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
 
-
   // OnClick Function
    check = function () {
     list.onclick = function () {
@@ -164,19 +163,29 @@ window.onload = function () {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
+          }
+          if(lives>0){
+            healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
+          }
+          else{
+            healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
         }
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
-        indicator = document.getElementById("indicator");
-        indicator.innerHTML = "<span style='background-color:red'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         lives -= 1;
         comments();
         animate();
+        if(lives>0){
+          healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
+        }
+        else{
+          healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
+        }
       } else {
         comments();
-      }
+        }
     }
   }
   }
@@ -197,9 +206,11 @@ window.onload = function () {
     buttons();
 
     guesses = [ ];
-    lives = 12+boost;
+    lives = 12-level;
     counter = 0;
     space = 0;
+    healthbar = document.getElementById('healthbar');
+    healthbar.innerHTML = "<div id='indicator' style='width:"+(lives/(12-level))*100+"%'></div>";
     result();
     comments();
     selectCat();

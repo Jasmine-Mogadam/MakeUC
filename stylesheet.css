@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/*
 @font-face{
 	font-family: 'Upheaval';
 <<<<<<< HEAD
@@ -30,8 +31,8 @@ html {
 >>>>>>> parent of e54d14f (Update stylesheet.css)
 	font-weight: normal;
 	font-style: normal;
-}
-	
+}*/
+
 
 body {
   background: #000000;
@@ -132,8 +133,8 @@ canvas {
     padding: 0;
     margin: auto;
     display: block;
-    width:600px;
-    height:600px;
+    width:500px;
+    height:500px;
 }
 
 #healthbar {
@@ -151,6 +152,7 @@ canvas {
   background-color: green;
   overflow: hidden;
   float: left;
+  transition: width 2s;
 }
 
 @media (max-width: 1000px) {
@@ -158,12 +160,18 @@ canvas {
   font-size: 2em;
   }
   canvas{
-  margin-left: 190px;
+  margin-left: 30%;
   }
   #alphabet li{
   margin: 1px;
   font-size: 3em;
   width: 100px;
   height: 100px;
+  }
+  #category{
+    font-size: 2em;
+  }
+  #hold{
+    margin-left: 30%;
   }
 }
