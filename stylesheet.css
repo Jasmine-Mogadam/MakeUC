@@ -5,6 +5,7 @@ html {
 /*
 @font-face{
 	font-family: 'Upheaval';
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 	src: url('MakeUC/font/upheaval/Upeaval.woff') format('woff'),
 		url('MakeUC/font/upheaval/Upheaval.ttf') format('truetype'),
@@ -14,12 +15,17 @@ html {
 		url('Upheaval.ttf') format('truetype'),
 		url('Upheaval.svg#Upheaval') format('svg');
 >>>>>>> parent of e54d14f (Update stylesheet.css)
+=======
+	src: url('font/upheaval/upheavtt.woff') format('woff'),
+		url('font/upheaval/upheavtt.ttf') format('truetype');
+>>>>>>> Stashed changes
   	font-weight: normal;
   	font-style: normal;
 }
 
 @font-face{
 	font-family:'Arcade';
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 	src: url('MakeUC/font/8_bit_arcade/8-bit Arcade In.ttf') format('truetype'),
 		url('MakeUC/font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
@@ -29,17 +35,27 @@ html {
 		url('8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg')
 		url('8_bit_Arcade_In.woff') format('woff');
 >>>>>>> parent of e54d14f (Update stylesheet.css)
+=======
+	src: url('font/8_bit_arcade/8-bit Arcade On.ttf') format('truetype'),
+		url('font/8_bit_arcade/8-bit_Arcade_In.svg#8_Bit_Arcade_In') format('svg'),
+		url('font/8_bit_arcade/8-bit_Arcade_In.woff') format('woff');
+>>>>>>> Stashed changes
 	font-weight: normal;
 	font-style: normal;
 }*/
 
 
 body {
+<<<<<<< Updated upstream
   background: #000000;
+=======
+  background: #2F4F4F;
+  font-family: 'Arcade', Fallback, sans-serif;
+>>>>>>> Stashed changes
   color:white;
   height:100%;
   text-align:center;
-  font-size:18px;
+  font-size:25px;
   margin: 15px;
 }
 
@@ -77,10 +93,11 @@ p{
 #alphabet li {
   float:left;
   margin: 5px;
+  text-align: center;
   list-style:none;
-  width: 45px;
-  height: 45px;
-  padding-top:5px;
+  width: 60px;
+  height: 60px;
+  padding-top:0px;
   color:white;
   cursor:pointer;
   border-radius: 25%;
@@ -88,6 +105,7 @@ p{
   border: solid 1px $white;
   user-select:none;
   -webkit-tap-highlight-color: transparent;
+  font-size: 2em;
 }
 #alphabet li:hover {
   background: white;
@@ -155,18 +173,27 @@ canvas {
   transition: width 2s;
 }
 
+#category{
+  font-size: 1.5em;
+}
+
+button{
+  font-size: 1.5em;
+  width: unset;
+}
+
 @media (max-width: 1000px) {
   #my-word{
-  font-size: 2em;
+    font-size: 2em;
   }
   canvas{
-  margin-left: 30%;
+    margin-left: 30%;
   }
   #alphabet li{
-  margin: 1px;
-  font-size: 3em;
-  width: 100px;
-  height: 100px;
+    margin: 1px;
+    font-size: 3em;
+    width: 100px;
+    height: 100px;
   }
   #category{
     font-size: 2em;
