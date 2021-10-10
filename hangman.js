@@ -92,113 +92,92 @@ window.onload = function () {
     drawArray[drawMe]();
   }
 
-/*
-  var imgArray = new Array();
-var x=0;
-var livesLost=0;
-
-if (level==1)
-{
-  for (let step =1; step<=14; step++) {
-    imgArray[step-1]=new Image();
-    imgArray[step-1].src='img_'+14-step+'.png'
-  }
-}
-else
-{
-  for (let step=1; step<=10; step++){
-    imgArray[step-1]=new Image();
-    imgArray[step-1].src='m_img_'+10-step+'.png';
-  }
-}
-
- display = function(){
-   context.clearRect(0,0,200,200);
-   imgArray[lives];
-  }
-
-
-
- // Hangman
-canvas =  function(){
-
-  rocketShip = document.getElementById("rocket");
-  context = rocketShip.getContext('2d');
-  context.beginPath();
-  context.strokeStyle = "#fff";
-  context.lineWidth = 2;
-};
-
-draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-
-  context.moveTo($pathFromx, $pathFromy);
-  context.lineTo($pathTox, $pathToy);
-  context.stroke();
-}
-*/
-
-   // Hangman
+   // Rocket Hangman
   canvas =  function(){
 
-    rocketShip = document.getElementById("rocket");
-    context = rocketShip.getContext('2d');
-    context.beginPath();
-    context.strokeStyle = "#fff";
-    context.lineWidth = 2;
+    canvas = document.getElementById("rocket");
+    context = canvas.getContext('2d');
+    image = new Image(600, 600); // Using optional size for image
+    console.log("change request");
+    if(level === 0){
+      imgStr = "img/img_";
+      console.log("no monk");
+    }
+    if(level === 2){
+      imgStr = "img/img_m_";
+    }
   };
 
-    head = function(){
-      rocketShip = document.getElementById("rocket");
-      context = rocketShip.getContext('2d');
-      context.beginPath();
-      context.arc(60, 25, 10, 0, Math.PI*2, true);
-      context.stroke();
-    }
-
-  draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
-
-    context.moveTo($pathFromx, $pathFromy);
-    context.lineTo($pathTox, $pathToy);
-    context.stroke();
-}
-
-   frame1 = function() {
-     draw (0, 150, 150, 150);
+   pristene = function() {
+     image.src = imgStr + "0.png";
+     context.drawImage(image, 0, 0);
+     console.log("1");
    };
 
-   frame2 = function() {
-     draw (10, 0, 10, 600);
+   smudged = function() {
+     image.src = imgStr + "1.png";
+     context.drawImage(image, 0, 0);
+     console.log("2");
    };
 
-   frame3 = function() {
-     draw (0, 5, 70, 5);
+   dented = function() {
+     image.src = imgStr + "2.png";
+     context.drawImage(image, 0, 0);
+     console.log("3");
    };
 
-   frame4 = function() {
-     draw (60, 5, 60, 15);
+   scratched = function() {
+     image.src = imgStr + "3.png";
+     context.drawImage(image, 0, 0);
+     console.log("4");
    };
 
-   torso = function() {
-     draw (60, 36, 60, 70);
+   chipped = function() {
+     image.src = imgStr + "4.png";
+     context.drawImage(image, 0, 0);
    };
 
-   rightArm = function() {
-     draw (60, 46, 100, 50);
+   damaged = function() {
+     image.src = imgStr + "5.png";
+     context.drawImage(image, 0, 0);
    };
 
-   leftArm = function() {
-     draw (60, 46, 20, 50);
+   tarnished = function() {
+     image.src = imgStr + "6.png";
+     context.drawImage(image, 0, 0);
    };
 
-   rightLeg = function() {
-     draw (60, 70, 100, 100);
+   ruined = function() {
+     image.src = imgStr + "7.png";
+     context.drawImage(image, 0, 0);
    };
 
-   leftLeg = function() {
-     draw (60, 70, 20, 100);
+   explode = function() {
+     image.src = imgStr + "8.png";
+     context.drawImage(image, 0, 0);
    };
 
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+   norm9 = function() {
+     image.src = imgStr + "9.png";
+     context.drawImage(image, 0, 0);
+   };
+
+   norm10 = function() {
+     image.src = imgStr + "10.png";
+     context.drawImage(image, 0, 0);
+   };
+
+   norm11 = function() {
+     image.src = imgStr + "11.png";
+     context.drawImage(image, 0, 0);
+   };
+
+   normExplode = function() {
+     image.src = imgStr + "12.png";
+     context.drawImage(image, 0, 0);
+   };
+
+  drawArray = [pristene, smudged, dented, scratched,  chipped,  damaged, tarnished, ruined, explode, norm9, norm10, norm11, normExplode];
 
   // OnClick Function
    check = function () {
@@ -211,7 +190,6 @@ draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
-          console.log("loop")
           }
           if(lives>0){
             healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
@@ -219,13 +197,11 @@ draw = function($pathFromx, $pathFromy, $pathTox, $pathToy) {
           else{
             healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
         }
-        console.log("after loop")
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         lives -= 1;
-        console.log("life down")
         comments();
         animate();
         if(lives>0){
