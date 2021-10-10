@@ -11,9 +11,9 @@ window.onload = function () {
   var guess ;             // Guess
   var guesses = [ ];      // Stored guesses
   var lives ;             // Lives
-  var counter ;           // Count correct guesses
+  var counter ;           // Count correct geusses
   var space;              // Number of spaces in word '-'
-  var level = 0;           //extra lives from web purchases
+  var boost = 0;           //extra lives from web purchases
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -39,11 +39,15 @@ window.onload = function () {
   // Select Category
   var selectCat = function () {
     if (chosenCategory === categories[0]) {
-      showCategory.innerHTML = "The Category Is Film Titles";
+      showCategory.innerHTML = "The Category Is 80's Movies";
     } else if (chosenCategory === categories[1]) {
-      showCategory.innerHTML = "The Category Is Films";
+      showCategory.innerHTML = "The Category Is 70's Bands";
     } else if (chosenCategory === categories[2]) {
-      showCategory.innerHTML = "The Category Is Cities";
+      showCategory.innerHTML = "The Category Is Retro Video Games";
+    } else if (chosenCategory === categories[3]) {
+      showCategory.innerHTML = "The Category Is 70's TV Shows"
+    } else if (chosenCategory === categories[4]) {
+      showCategory.innerHTML = "The Category Is U.S. Presidents"
     }
   }
 
@@ -150,7 +154,8 @@ window.onload = function () {
      draw (60, 70, 20, 100);
    };
 
-  drawArray = [rightLeg, leftLeg, rightArm, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+  drawArray = [rightLeg, leftLeg, leftArm,  torso,  head, frame4, frame3, frame2, frame1];
+
 
   // OnClick Function
    check = function () {
@@ -163,29 +168,19 @@ window.onload = function () {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
-          }
-          if(lives>0){
-            healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
-          }
-          else{
-            healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
         }
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
+        indicator = document.getElementById("indicator");
+        indicator.innerHTML = "<span style='background-color:red'></span>";
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
         lives -= 1;
         comments();
         animate();
-        if(lives>0){
-          healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
-        }
-        else{
-          healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
-        }
       } else {
         comments();
-        }
+      }
     }
   }
   }
@@ -195,8 +190,10 @@ window.onload = function () {
   play = function () {
     categories = [
         ["the-princess-bride", "footloose", "top-gun", "the-karate-kid", "the-terminator", "scarface", "beetlejuice", "dirty-dancing", "back-to-the-future", "die-hard", "the-shining", "ghostbusters", "the-breakfast-club", "sixteeen-candles", "pretty-in-pink", "labyrinth", "annie", "beverly-hills-cop"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["stevie-wonder", "Led Zeppelin", "Elton John", "Pink Floyd", "The Rolling Stones", "queen", "david-bowie", "black-sabbath", "fleetwood-mac", "marvin-gaye", "james-brown", "aretha-franklin", "bruce-springsteen", "lynyrd-skynyrd"],
+        ["minesweeper", "pac-man", "space-invaders", "telstar", "odyssey", "stratego", "spaceware", "combat", "asteroids", "super-breakout", "circus-atari", "galaga", "donkey-kong", "frogger"],
+        ["the-brady-bunch", "happy-days", "the-amazing-spiderman", "the-mary-tyler-moore-show", "the-new-dick-van-dyke-show", "good-times", "little-house-on-the-prairie"],
+        ["ronald-reagan", "jimmy-carter", "gerald-ford", "richard-nixon", "lyndon-b-johnson", "dwight-d-eisenhower", "harry-s-truman", "franklin-d-roosevelt", "herbert-hoover", "calvin-coolidge", "theodore-roosevelt", "william-howard-taft", "woodrow-wilson", "george-bush", "bill-clinton"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -206,11 +203,9 @@ window.onload = function () {
     buttons();
 
     guesses = [ ];
-    lives = 12-level;
+    lives = 12+boost;
     counter = 0;
     space = 0;
-    healthbar = document.getElementById('healthbar');
-    healthbar.innerHTML = "<div id='indicator' style='width:"+(lives/(12-level))*100+"%'></div>";
     result();
     comments();
     selectCat();
