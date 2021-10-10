@@ -89,95 +89,77 @@ window.onload = function () {
       // Animate rocket
   var animate = function () {
     var drawMe = lives ;
+    console.log(lives);
     drawArray[drawMe]();
   }
 
    // Rocket Hangman
   canvas =  function(){
 
-    canvas = document.getElementById("rocket");
-    context = canvas.getContext('2d');
-    image = new Image(600, 600); // Using optional size for image
+    image = document.getElementById("rocket");
     console.log("change request");
     if(level === 0){
       imgStr = "img/img_";
       console.log("no monk");
     }
     if(level === 2){
-      imgStr = "img/img_m_";
+      imgStr = "img/m_img_";
     }
   };
 
    pristene = function() {
      image.src = imgStr + "0.png";
-     context.drawImage(image, 0, 0);
-     console.log("1");
    };
 
    smudged = function() {
      image.src = imgStr + "1.png";
-     context.drawImage(image, 0, 0);
-     console.log("2");
    };
 
    dented = function() {
      image.src = imgStr + "2.png";
-     context.drawImage(image, 0, 0);
-     console.log("3");
    };
 
    scratched = function() {
      image.src = imgStr + "3.png";
-     context.drawImage(image, 0, 0);
-     console.log("4");
    };
 
    chipped = function() {
      image.src = imgStr + "4.png";
-     context.drawImage(image, 0, 0);
    };
 
    damaged = function() {
      image.src = imgStr + "5.png";
-     context.drawImage(image, 0, 0);
    };
 
    tarnished = function() {
      image.src = imgStr + "6.png";
-     context.drawImage(image, 0, 0);
    };
 
    ruined = function() {
      image.src = imgStr + "7.png";
-     context.drawImage(image, 0, 0);
    };
 
    explode = function() {
      image.src = imgStr + "8.png";
-     context.drawImage(image, 0, 0);
    };
 
    norm9 = function() {
      image.src = imgStr + "9.png";
-     context.drawImage(image, 0, 0);
    };
 
    norm10 = function() {
      image.src = imgStr + "10.png";
-     context.drawImage(image, 0, 0);
    };
 
    norm11 = function() {
      image.src = imgStr + "11.png";
-     context.drawImage(image, 0, 0);
    };
 
    normExplode = function() {
      image.src = imgStr + "12.png";
-     context.drawImage(image, 0, 0);
    };
 
-  drawArray = [normExplode, norm11, norm10, norm9, explode, ruined, tarnished, damaged, chipped, scratched, dented, smudged, pristene];
+  drawArray = [normExplode, norm11, norm10, norm9, explode, ruined, tarnished, damaged, chipped, scratched, dented, smudged, pristene, smudged];
 
   // OnClick Function
    check = function () {
@@ -205,6 +187,7 @@ window.onload = function () {
         comments();
         animate();
         if(lives>0){
+          console.log('here?')
           healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
         }
         else{
@@ -254,7 +237,6 @@ window.onload = function () {
   document.getElementById('reset').onclick = function() {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
-    context.clearRect(0, 0, 1400, 700);
     play();
   }
 }
