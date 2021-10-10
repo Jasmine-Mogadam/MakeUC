@@ -24,10 +24,12 @@ window.onload = function () {
   //find level
   normalRocket.onclick = function () {
     level = 0;
+    console.log("norm");
   }
 
   monkeyRocket.onclick = function () {
     level = 4;
+    console.log("norm");
   }
 
   // create alphabet ul
@@ -125,7 +127,6 @@ window.onload = function () {
     console.log("change request");
     if(level === 0){
       imgStr = "img/img_";
-      console.log("no monk");
     }
     if(level === 4){
       imgStr = "img/img_m_";
