@@ -14,6 +14,7 @@ window.onload = function () {
   var counter ;           // Count correct guesses
   var space;              // Number of spaces in word '-'
   var level = 0;           //extra lives from web purchases
+  var health = 100;   
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -77,12 +78,26 @@ window.onload = function () {
    comments = function () {
     showLives.innerHTML = "You have " + lives + " lives";
     if (lives < 1) {
-      showLives.innerHTML = "Game Over";
+      showLives.innerHTML = "Game Over. Due to damage your ship exploded!";
     }
     for (var i = 0; i < guesses.length; i++) {
-      if (counter + space === guesses.length) {
-        showLives.innerHTML = "You Win!";
-      }
+      if ((counter + space === guesses.length) && (health >= 95)){
+          showLives.innerHTML = "You Win! Your ship flew to Pluto and back setting a new record for achieving lightspeed travel!";
+      } else if ((counter + space === guesses.length) && (health >= 86)) {
+          showLives.innerHTML = "You Win! Your ship flew around Mars and back to Earth safely without any severe damage!";
+      } else if ((counter + space === guesses.length) && (health >= 74)) {
+          showLives.innerHTML = "You Win! Your ship made it to Mars and hobbled its way back to Earth safely!";
+      } else if ((counter + space === guesses.length) && (health >= 62)) {
+          showLives.innerHTML = "You Win! Your ship made it to Mars, but has crash landed. The crew is now forced to learn how to co-exist with the aliens!";
+      } else if ((counter + space === guesses.length) && (health >= 50)) {
+          showLives.innerHTML = "You Win! Your ship made it to the Moon and hobbled its way back to Earth safely!";
+      } else if ((counter + space === guesses.length) && (health >= 38)) {
+          showLives.innerHTML = "You Win! Your ship made it to the Moon but was unable to make it back to Earth. It is now in orbit of Earth with no way to get down!";
+      } else if ((counter + space === guesses.length) && (health >= 27)) {
+          showLives.innerHTML = "You Win! Your ship made it to the Moon, but crash landed and is unable to return to Earth!";
+      }  else if ((counter + space === guesses.length) && (health >= 15)) {
+          showLives.innerHTML = "You Win! Your ship was too damaged to reach space. You almost crashed into an airplane before you fell out of the sky!";
+      }  
     }
   }
 
@@ -173,11 +188,12 @@ window.onload = function () {
           guesses[i].innerHTML = guess;
           counter += 1;
           }
+          health = ((lives)/(12-level))*100;
           if(lives>0){
-            healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
+            healthbar.innerHTML = "<div id='indicator' style='width:"+health+"%;'></div>";
           }
           else{
-            healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
+            healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 5s;'></div>";
         }
         this.innerHTML = "<span style='background: white;color: #2F4F4F;'></span>";
       }
@@ -186,9 +202,9 @@ window.onload = function () {
         lives -= 1;
         comments();
         animate();
+        health = ((lives)/(12-level))*100;
         if(lives>0){
-          console.log('here?')
-          healthbar.innerHTML = "<div id='indicator' style='width:"+((lives)/(12-level))*100+"%;'></div>";
+          healthbar.innerHTML = "<div id='indicator' style='width:"+health+"%;'></div>";
         }
         else{
           healthbar.innerHTML = "<div id='indicator' style='width:0%;transition: width 2s;'></div>";
@@ -221,8 +237,9 @@ window.onload = function () {
     lives = 12-level;
     counter = 0;
     space = 0;
+    health = lives;
     healthbar = document.getElementById('healthbar');
-    healthbar.innerHTML = "<div id='indicator' style='width:"+(lives/(12-level))*100+"%'></div>";
+    healthbar.innerHTML = "<div id='indicator' style='width:100%'></div>";
     result();
     comments();
     selectCat();
